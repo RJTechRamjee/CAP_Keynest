@@ -13,7 +13,7 @@ entity  Users : cuid , managed {
     detailedIntro: String;
     salary : Integer; // check
     currency : Currency;
-    userType : Association to UserRoles;
+    userRole : Association to UserRoles;
 
 
 }

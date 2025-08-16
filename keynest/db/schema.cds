@@ -1,20 +1,22 @@
 namespace keynest.db;
 using { cuid , managed , Country , Currency , sap.common.CodeList } from '@sap/cds/common';
 
+entity CurrentUser : managed {
+  username : Association to one Users
+}
 
 entity  Users : cuid , managed {
-    username : String(20);
-    firstName : String(20);
-    lastName : String(20);
-    email  : String(50);
+    username : String(20) @mandatory;
+    firstName : String(20) @mandatory;
+    lastName : String(20) @mandatory;
+    email  : String(50) @mandatory;
     phone : String(20);
     address : Address;
-    shortIntro : String(200);
+    shortIntro : String(200) ;
     detailedIntro: String;
     salary : Integer; // check
     currency : Currency;
-    userRole : Association to UserRoles;
-
+    userRole : Association to UserRoles @mandatory @assert.target;
 
 }
 
@@ -36,3 +38,15 @@ entity UserRoles : CodeList {
   };
 }
 
+entity Objects : cuid , managed {
+  objectID : Integer;
+  objectType : String(5); // enum
+  objectName : String(100);
+  objectDescription : String;
+  purpose : String(5); // enum,
+  state : String(30);
+  country : Country ;
+  availableFrom : Date;
+  minimumContractPeriod : Integer;  // in months
+  address : Address;
+}

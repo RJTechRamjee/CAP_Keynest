@@ -1,4 +1,4 @@
-
+/* 
 const cds = require('@sap/cds');
 
 class AdminService extends cds.ApplicationService{
@@ -20,3 +20,4 @@ class AdminService extends cds.ApplicationService{
 }
 
 module.exports = AdminService;
+*/

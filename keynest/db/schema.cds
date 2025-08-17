@@ -2,7 +2,7 @@ namespace keynest.db;
 using { cuid , managed , Country , Currency , sap.common.CodeList } from '@sap/cds/common';
 
 entity CurrentUser : managed {
-  username : Association to one Users
+ key username : Association to one Users
 }
 
 entity  Users : cuid , managed {

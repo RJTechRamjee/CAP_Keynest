@@ -3,3 +3,7 @@
 keynest/mta_archives/.env
 # auto generated wildcard
 keynest/db/.env
+# auto generated wildcard
+bookshop/db/.env
+# auto generated wildcard
+bookshop/.env1
